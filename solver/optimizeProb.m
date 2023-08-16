@@ -190,6 +190,11 @@ else
     wasNoCell = false;
 end
 for i=1:numel(old)
+    a = size(paramlist{1});
+    if a(1) ~= 1
+        paramlist = paramlist{1};
+        paramlist = cellstr(paramlist);
+    end
     paramlist = regexprep(paramlist,old{i},new{i});
 end
 if wasNoCell
